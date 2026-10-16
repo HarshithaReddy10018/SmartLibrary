@@ -1,0 +1,15 @@
+{
+  "name": "smartlibrary-texthack-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SmartLibrary - Intelligent Digital Library Platform",
+  "scripts": {
+    "postinstall": "npm --prefix frontend install",
+    "demo": "javac -d backend/bin backend/src/main/java/com/smartlibrary/algorithms/*.java && java -cp backend/bin com.smartlibrary.algorithms.AlgorithmDemo",
+    "backend": "run_backend.bat",
+    "frontend": "npm --prefix frontend run dev",
+    "build:frontend": "npm --prefix frontend run build",
+    "start": "npm --prefix frontend run dev",
+    "dev": "npm --prefix frontend run dev"
+  }
+}

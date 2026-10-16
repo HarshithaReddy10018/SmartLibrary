@@ -1,0 +1,51 @@
+SMARTLIBRARY — QUICK START (Windows + VS Code)
+
+1. Extract this ZIP to a normal folder, e.g. Desktop\SmartLibrary_TextHack.
+2. Install/check Java JDK 17+ and Node.js 18+.
+   In VS Code: Terminal > New Terminal, then run:
+       java -version
+       javac -version
+       node -v
+       npm -v
+3. Start the backend:
+   - Open the project root folder in VS Code.
+   - In Explorer, right-click run_backend.bat > Open in File Explorer, then double-click it.
+   - Or from the VS Code terminal at the project root run:
+       .\run_backend.bat
+   - Leave this terminal running. Expected API base: http://localhost:8080
+4. Start the frontend in a SECOND terminal:
+       .\run_frontend.bat
+   - Leave it running. Open http://localhost:5173 in Chrome.
+5. The frontend's Vite config proxies /api calls to http://localhost:8080.
+6. To stop a server, focus its terminal and press Ctrl+C.
+
+If the page opens but results fail, verify the backend terminal says the server started.
+If Java compilation fails, copy the full red error text. If npm fails, copy the full error text.
+Do not delete backend/bin, node_modules, or source files while troubleshooting.
+
+The royal navy-and-gold visual theme has been added in frontend/src/styles.css.
+The existing React logic, Java algorithms, and API calls are preserved.
+
+
+DATASET UPDATE
+- The supplied smart_library_data.csv is included in frontend/public/.
+- Open Dataset Analytics from the sidebar to view 1,000 user-activity rows, averages, a filterable table, and a CSV download link.
+- This CSV is usage/behaviour data, not a book catalogue. The existing research-paper catalogue remains provided by the Java backend.
+- You can start the frontend from the project root with `npm run dev`, or from the frontend folder with `npm run dev`.
+
+
+DATASET UPDATE
+- smart_library_data.csv is included in frontend/public/.
+- Click Dataset Analytics in the sidebar to view the 1,000 user-activity rows, averages, filterable table, and CSV download.
+- This is a library usage/behaviour dataset, not a book catalogue. The existing research-paper catalogue is still served by the Java backend.
+- Frontend can be started from the project root with `npm run dev`, or from the frontend folder with `npm run dev`.
+
+DATASET-TO-MODULE CONNECTION (UPDATED)
+- Open Dataset Analytics in the sidebar and choose a CSV user record.
+- M1: click Load selected record, then Run Search Algorithms. The CSV row is searched as text.
+- M2: click Index dataset records, then Compute Suffix Structures. The first 12 CSV records become the indexed text.
+- M3: click Load dataset sequences, then Solve All DP Models. Visit-duration and books-borrowed values become alignment sequences.
+- M4: click Run with selected record. Visit duration, books borrowed, and app logins determine the network-flow capacities.
+- M5: click Run with selected record. Books borrowed and visit duration determine the conflict graph size/extra edge.
+- M6: click Run with dataset values. The first 8 visit-duration values are used as the parallel prefix-scan input.
+The provided CSV is copied to frontend/public/smart_library_data.csv and is loaded by the frontend at runtime.
